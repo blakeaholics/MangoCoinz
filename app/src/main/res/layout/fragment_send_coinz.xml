@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <TextView
+        android:id="@+id/txtLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="Send MangoCoinz"
+        android:layout_below="@+id/tvCoinzOK"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ff969696" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:hint="Recipient's username..."
+        android:ems="10"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/txtLabel"
+        android:layout_toRightOf="@+id/tvCoinzOK"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
+    <requestFocus />
+    </EditText>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1"
+        android:hint="Enter your password..."
+        android:ems="10"
+        android:layout_below="@+id/space2"
+        android:layout_alignStart="@+id/editText2"
+        android:inputType="textPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
+    </EditText>
+
+    <TextView android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#ffb2ec5d"
+        android:id="@+id/tvCoinzOK"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text" />
+
+    <Button android:id="@+id/btnSendCoinz"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Coinz"
+        android:layout_marginBottom="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/space"
+        android:layout_alignEnd="@+id/editText1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:hint="Enter an amount..."
+        android:ems="10"
+        android:layout_below="@+id/space"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/editText2"
+        android:id="@+id/space" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/space2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Before: -AMOUNT- MCZ"
+        android:id="@+id/textView"
+        android:layout_above="@+id/btnSendCoinz"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="93dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="After: -AMOUNT- MCZ"
+        android:id="@+id/textView1"
+        android:layout_alignTop="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp" />
+
+</RelativeLayout>
