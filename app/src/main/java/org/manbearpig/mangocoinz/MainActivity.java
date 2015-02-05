@@ -138,36 +138,49 @@ public class MainActivity extends Activity {
                 menu.getItem(1).setVisible(false); //Send
                 menu.getItem(2).setVisible(false); //Refresh
                 menu.getItem(3).setVisible(false); //Add
+                menu.getItem(4).setVisible(false); //Generate
                 return true;
             case 1:
                 menu.getItem(0).setVisible(false);
                 menu.getItem(1).setVisible(true);
                 menu.getItem(2).setVisible(false);
                 menu.getItem(3).setVisible(false);
+                menu.getItem(4).setVisible(false);
+                return true;
+            case 2:
+                menu.getItem(0).setVisible(false);
+                menu.getItem(1).setVisible(false);
+                menu.getItem(2).setVisible(false);
+                menu.getItem(3).setVisible(false);
+                menu.getItem(4).setVisible(true);
                 return true;
             case 3:
                 menu.getItem(0).setVisible(false);
                 menu.getItem(1).setVisible(false);
                 menu.getItem(2).setVisible(true);
                 menu.getItem(3).setVisible(false);
+                menu.getItem(4).setVisible(false);
                 return true;
             case 4:
                 menu.getItem(0).setVisible(false);
                 menu.getItem(1).setVisible(false);
                 menu.getItem(2).setVisible(false);
                 menu.getItem(3).setVisible(true);
+                menu.getItem(4).setVisible(false);
                 return true;
             case 5:
                 menu.getItem(0).setVisible(false);
                 menu.getItem(1).setVisible(false);
                 menu.getItem(2).setVisible(true);
                 menu.getItem(3).setVisible(false);
+                menu.getItem(4).setVisible(false);
                 return true;
             default:
                 menu.getItem(0).setVisible(false);
                 menu.getItem(1).setVisible(false);
                 menu.getItem(2).setVisible(false);
                 menu.getItem(3).setVisible(false);
+                menu.getItem(4).setVisible(false);
         }
 		return true;
 	}

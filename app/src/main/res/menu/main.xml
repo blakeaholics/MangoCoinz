@@ -21,6 +21,11 @@
         android:orderInCategory="3"
         android:showAsAction="withText|ifRoom" />
 
+    <item android:id="@+id/action_generate"
+        android:title="@string/action_generate"
+        android:orderInCategory="4"
+        android:showAsAction="withText|ifRoom" />
+
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="200"

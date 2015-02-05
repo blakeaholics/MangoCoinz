@@ -6,6 +6,7 @@
     <string name="action_quit">Quit</string>
     <string name="action_sync">Sync</string>
     <string name="action_send">Send</string>
+    <string name="action_generate">Generate</string>
     <string name="toast_sync">Syncing with server...</string>
     
     <!-- Nav Drawer Menu Items -->
