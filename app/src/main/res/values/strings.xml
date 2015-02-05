@@ -30,7 +30,16 @@
         <item>@drawable/ic_news</item>
         <item>@drawable/ic_logout</item>
     </array>
-    
+
+    <string-array name="contacts_example">
+        <item>Satoshi Nakamoto: satoshi</item>
+        <item>John Appleseed: Japps</item>
+        <item>Mary: mangouser420</item>
+        <item>BitTrex: mangouser03456</item>
+        <item>UseCryptos: mangouser9456</item>
+        <item>Bulbs: mangouser34</item>
+    </string-array>
+
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
     <string name="toast_quit">Syncing and quitting...</string>
