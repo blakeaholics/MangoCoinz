@@ -20,7 +20,8 @@
         android:id="@+id/lstContacts"
         android:layout_below="@+id/txtLabel"
         android:layout_alignParentEnd="true"
-        android:entries="@array/contacts_example"/>
+        />
+    <!--android:entries="@array/contacts_example"-->
 
 
 </RelativeLayout>
