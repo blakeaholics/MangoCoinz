@@ -1,13 +1,16 @@
 package org.manbearpig.mangocoinz;
 
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.ListFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -50,6 +53,31 @@ public class ContactsFragment extends Fragment {
         });
 
         listView.setAdapter(adapter);
+		
+		/*final Dialog dialog = new Dialog(getActivity());
+		// Include dialog.xml file
+		dialog.setContentView(R.layout.dialog_contact);
+		// Set dialog title
+		dialog.setTitle("Add a contact");
+
+		 set values for custom dialog components - text, image and button
+		TextView text = (TextView) dialog.findViewById(R.id.textDialog);
+		text.setText("Custom dialog Android example.");
+		ImageView image = (ImageView) dialog.findViewById(R.id.imageDialog);
+		image.setImageResource(R.drawable.image0);
+
+		//dialog.show();
+		 
+		Button declineButton = (Button) dialog.findViewById(R.id.cancelButton);
+		// if decline button is clicked, close the custom dialog
+		declineButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// Close dialog
+				dialog.dismiss();
+			}
+		});		*/
+		
         return v;
     }
 

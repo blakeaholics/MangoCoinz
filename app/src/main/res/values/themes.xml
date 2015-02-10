@@ -10,7 +10,37 @@
         <item name="android:titleTextStyle">@style/MyTextAppearance</item>
     </style>
 
+    <style name="MyThemeOrange" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBarOrange</item>
+        <item name="android:actionMenuTextColor">#fff</item>
+    </style>
+
+	<style name="MyActionBarOrange" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#F78145</item>
+        <item name="android:titleTextStyle">@style/MyTextAppearance</item>
+    </style>
+
+    <style name="MyListItemOrange" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#d1f05210</item>
+    </style>
+
     <style name="MyTextAppearance" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
         <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="DialogText">
+        <item name="android:textColor">#4f7c1e</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="DialogText.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
     </style>
 </resources>

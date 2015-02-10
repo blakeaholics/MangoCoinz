@@ -12,7 +12,7 @@
                 android:layout_width="fill_parent">
                 <TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:textStyle="bold"
-                        android:text="User  " android:textSize="13sp"></TextView>
+                        android:text="User: " android:textSize="13sp"></TextView>
                 <TextView android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:text="mangouser"
                         android:id="@+id/tvMobile" android:textSize="13sp"></TextView>
@@ -22,7 +22,7 @@
                 android:layout_width="fill_parent">
                 <TextView android:id="@+id/TextView02" android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:textStyle="bold"
-                        android:text="Total sent  " android:textSize="13sp"></TextView>
+                        android:text="Total sent: " android:textSize="13sp"></TextView>
                 <TextView android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:text="0"
                         android:id="@+id/tvMail" android:textSize="13sp" android:layout_weight="1"></TextView>

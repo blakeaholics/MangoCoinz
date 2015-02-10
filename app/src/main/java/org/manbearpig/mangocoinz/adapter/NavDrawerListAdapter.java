@@ -1,5 +1,6 @@
 package org.manbearpig.mangocoinz.adapter;
 
+import org.manbearpig.mangocoinz.MainActivity;
 import org.manbearpig.mangocoinz.R;
 import org.manbearpig.mangocoinz.model.NavDrawerItem;
 
@@ -17,10 +18,11 @@ import android.widget.TextView;
 public class NavDrawerListAdapter extends BaseAdapter {
 	
 	private Context context;
+	private MainActivity activity; //SWAP CONTEXT WITH ACTIVITY
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	
-	public NavDrawerListAdapter(Context context, ArrayList<NavDrawerItem> navDrawerItems){
-		this.context = context;
+	public NavDrawerListAdapter(MainActivity activity, ArrayList<NavDrawerItem> navDrawerItems){
+		this.activity = activity;
 		this.navDrawerItems = navDrawerItems;
 	}
 
@@ -42,9 +44,17 @@ public class NavDrawerListAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		if (convertView == null) {
-            LayoutInflater mInflater = (LayoutInflater)
-                    context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = mInflater.inflate(R.layout.drawer_list_item, null);
+            // ADD THEME SWITCH
+            LayoutInflater mInflater = (LayoutInflater) activity.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+
+            switch (activity.getThemeVar()) {
+                case 0:
+                    convertView = mInflater.inflate(R.layout.drawer_list_item, null);
+                    break;
+                case 1:
+                    convertView = mInflater.inflate(R.layout.drawer_list_item_orange, null);
+                    break;
+            }
         }
          
         ImageView imgIcon = (ImageView) convertView.findViewById(R.id.icon);
@@ -65,5 +75,6 @@ public class NavDrawerListAdapter extends BaseAdapter {
         
         return convertView;
 	}
+
 
 }

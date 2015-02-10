@@ -18,28 +18,42 @@
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="100dip"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:id="@+id/button"
+        android:id="@+id/btnSave"
         android:background="@drawable/button_custom"
         android:textColor="#FFFFFF"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_alignTop="@+id/btnDiscard"
+        android:layout_toRightOf="@+id/textView" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="100dip"
         android:layout_height="wrap_content"
         android:text="Discard"
-        android:id="@+id/button2"
+        android:id="@+id/btnDiscard"
         android:background="@drawable/button_custom"
         android:textColor="#FFFFFF"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/spn_Theme"
         android:layout_toLeftOf="@+id/textView"
-        android:layout_alignTop="@+id/button" />
+        android:layout_marginTop="44dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spn_Theme"
+        android:entries="@array/stn_themes"
+        android:prompt="@string/prompt_themes"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Choose theme"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/btnDiscard" />
 </RelativeLayout>

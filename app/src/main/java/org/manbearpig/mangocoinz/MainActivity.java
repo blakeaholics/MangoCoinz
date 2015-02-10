@@ -2,10 +2,12 @@ package org.manbearpig.mangocoinz;
 
 import org.manbearpig.mangocoinz.adapter.*;
 import org.manbearpig.mangocoinz.model.*;
+import org.manbearpig.mangocoinz.util.ThemeUtil;
 
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.res.Configuration;
@@ -18,8 +20,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.qustom.dialog.QustomDialogBuilder;
 
 public class MainActivity extends Activity {
 	private DrawerLayout mDrawerLayout;
@@ -39,14 +45,19 @@ public class MainActivity extends Activity {
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	private NavDrawerListAdapter adapter;
     private int curPos = 0;
+    private int intTheme;
+    private String strTheme = "0"; //Green, Orange
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        ThemeUtil.onActivityCreateSetTheme(this);
 		setContentView(R.layout.activity_main);
 
 		mTitle = mDrawerTitle = getTitle();
-
+        
+		
+		
 		// load slide menu items
 		navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
 
@@ -82,7 +93,7 @@ public class MainActivity extends Activity {
 		mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
 
 		// setting the nav drawer list adapter
-		adapter = new NavDrawerListAdapter(getApplicationContext(),
+		adapter = new NavDrawerListAdapter(this,
 				navDrawerItems);
 		mDrawerList.setAdapter(adapter);
 
@@ -114,6 +125,42 @@ public class MainActivity extends Activity {
 		}
 	}
 
+    private void loadTheme(int i) {
+        switch (i) {
+            case 0:
+                setTheme(R.style.MyTheme); //GREEN
+                break;
+            case 1:
+                setTheme(R.style.MyThemeOrange);
+                break;
+        }
+        intTheme = i;
+    }
+
+    /**
+	 * Theme selector: Green or Orange.
+	 **/
+
+    public void chooseTheme(int i) {
+		switch (i) {
+            case 0:
+                ThemeUtil.changeToTheme(this, ThemeUtil.THEME_DEFAULT); //GREEN
+                break;
+            case 1:
+                ThemeUtil.changeToTheme(this, ThemeUtil.THEME_ORANGE);
+                break;
+		}
+        intTheme = i;
+	}
+
+    public int getThemeVar() {
+        return intTheme;
+    }
+
+    public void setThemeVar(int i) {
+        intTheme = i;
+    }
+	
 	/**
 	 * Slide menu item click listener
 	 * */
@@ -196,12 +243,76 @@ public class MainActivity extends Activity {
             case R.id.action_sync:
                 Toast.makeText(this, getString(R.string.toast_sync),
                         Toast.LENGTH_LONG).show();
+
                 return true;
             case R.id.action_settings:
-                Toast.makeText(this, getString(R.string.action_settings),
-                        Toast.LENGTH_LONG).show();
+                //displayView(6);
+                final Dialog dialog = new Dialog(this);
+                // Include dialog.xml file
+                dialog.setContentView(R.layout.fragment_settings);
+                // Set dialog title
+                dialog.setTitle("Settings - MangoCoinz");
+                dialog.show();
+
+                Button discardButton = (Button) dialog.findViewById(R.id.btnDiscard);
+                // if decline button is clicked, close the custom dialog
+                discardButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Close dialog
+                        dialog.dismiss();
+                    }
+                });
+
+                Button saveButton = (Button) dialog.findViewById(R.id.btnSave);
+                // if decline button is clicked, close the custom dialog
+                saveButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Close dialog
+                        saveSettings();
+                        dialog.dismiss();
+                    }
+                });
+
+                // Theme spinner shit
+
+                Spinner spinner = (Spinner) dialog.findViewById(R.id.spn_Theme);
+                //if (spinner != null) {
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View arg1, int arg2, long arg3) {
+                            strTheme = String.valueOf(arg3);
+                            Toast.makeText(getApplicationContext(), strTheme, Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+                //}
+
                 return true;
                 // ** snippet**
+            case R.id.action_add:
+                final Dialog dialog2 = new Dialog(this);
+                // Include dialog.xml file
+                dialog2.setContentView(R.layout.dialog_contact);
+                // Set dialog title
+                dialog2.setTitle("Add Contact");
+                dialog2.show();
+
+                Button declineButton = (Button) dialog2.findViewById(R.id.cancelButton);
+                // if decline button is clicked, close the custom dialog
+                declineButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Close dialog
+                        dialog2.dismiss();
+                    }
+                });
+                return true;
 
             case R.id.action_quit:
                 Toast.makeText(this, getString(R.string.toast_quit),
@@ -213,6 +324,17 @@ public class MainActivity extends Activity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
+
+    private void saveSettings() {
+        /**
+         * Theme selection
+         */
+        if (strTheme.equals("0")) { //Green
+            chooseTheme(0);
+        } else if (strTheme.equals("1")) { //Orange
+            chooseTheme(1);
+        }
+    }
 
 	/* *
 	 * Called when invalidateOptionsMenu() is triggered
@@ -250,6 +372,9 @@ public class MainActivity extends Activity {
 		case 5:
 			fragment = new NewsFragment();
 			break;
+        case 6:
+            fragment = new SettingsFragment();
+            break;
 
 		default:
 			break;

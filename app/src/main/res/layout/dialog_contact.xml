@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:theme="@style/Dialog">
+  
+    <ImageView
+        android:id="@+id/imageDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6dp" />
+ 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter contact name..."
+        android:layout_margin="10dp" />
+		
+		<EditText
+        android:id="@+id/editText2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter MCZ username..."
+            android:layout_below="@+id/editText"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignEnd="@+id/addButton" />
+  
+     <Button
+        android:id="@+id/cancelButton"
+         android:textSize="15sp"
+        android:layout_width="65dip"
+         android:layout_height="35dip"
+        android:text="Cancel"
+         android:background="@drawable/button_custom"
+        android:textColor="#FFFFFF"
+         android:layout_alignTop="@+id/addButton"
+         android:layout_toLeftOf="@+id/addButton"
+         android:layout_marginRight="10dp"
+         android:layout_marginBottom="15dp" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:textSize="15sp"
+        android:layout_width="65dip"
+        android:layout_height="35dip"
+        android:text="Add"
+        android:background="@drawable/button_custom"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/editText2"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_marginBottom="15dp" />
+      
+</RelativeLayout>

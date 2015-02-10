@@ -19,7 +19,7 @@
         android:layout_marginTop="10dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnSave"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Login"
@@ -43,7 +43,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_margin="10dp"
-        android:layout_above="@+id/button" />
+        android:layout_above="@+id/btnSave" />
 
     <ImageView
         android:id="@+id/imageView"
