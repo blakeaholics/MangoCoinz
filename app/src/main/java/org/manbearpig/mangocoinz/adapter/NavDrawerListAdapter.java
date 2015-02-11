@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +49,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
             // ADD THEME SWITCH
             LayoutInflater mInflater = (LayoutInflater) activity.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
+            Log.v("NavDrawerThemeNull", String.valueOf(activity.getThemeVar()));
             switch (activity.getThemeVar()) {
                 case 0:
                     convertView = mInflater.inflate(R.layout.drawer_list_item, null);
@@ -55,6 +58,18 @@ public class NavDrawerListAdapter extends BaseAdapter {
                     convertView = mInflater.inflate(R.layout.drawer_list_item_orange, null);
                     break;
             }
+        /*} else {
+            LayoutInflater mInflater = (LayoutInflater) activity.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+            Log.v("NavDrawerTheme", String.valueOf(activity.getThemeVar()));
+            switch (activity.getThemeVar()) {
+                case 0:
+                    convertView = mInflater.inflate(R.layout.drawer_list_item, parent);
+                    break;
+                case 1:
+                    convertView = mInflater.inflate(R.layout.drawer_list_item_orange, parent);
+                    break;
+            }*/
+
         }
          
         ImageView imgIcon = (ImageView) convertView.findViewById(R.id.icon);

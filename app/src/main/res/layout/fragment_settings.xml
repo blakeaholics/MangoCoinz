@@ -5,40 +5,6 @@
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:text="Settings"
-        android:textColor="#ff969696"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:id="@+id/btnSave"
-        android:background="@drawable/button_custom"
-        android:textColor="#FFFFFF"
-        android:layout_alignTop="@+id/btnDiscard"
-        android:layout_toRightOf="@+id/textView" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:text="Discard"
-        android:id="@+id/btnDiscard"
-        android:background="@drawable/button_custom"
-        android:textColor="#FFFFFF"
-        android:layout_below="@+id/spn_Theme"
-        android:layout_toLeftOf="@+id/textView"
-        android:layout_marginTop="44dp" />
-
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +12,8 @@
         android:entries="@array/stn_themes"
         android:prompt="@string/prompt_themes"
         android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2" />
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,6 +21,16 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Choose theme"
         android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
-        android:layout_alignStart="@+id/btnDiscard" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Run MangoCoinz on boot"
+        android:id="@+id/chkBoot"
+        android:layout_below="@+id/spn_Theme"
+        android:layout_centerHorizontal="true"
+        android:checked="true"
+        android:layout_marginBottom="10dp" />
 </RelativeLayout>

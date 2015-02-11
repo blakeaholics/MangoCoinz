@@ -44,8 +44,8 @@
     <string name="prompt_themes">Choose a theme</string>
 
     <string-array name="stn_themes">
-        <item>Green</item>
-        <item>Orange</item>
+        <item>Green &amp; White</item>
+        <item>Orange &amp; White</item>
     </string-array>
 
     <!-- Content Description -->
