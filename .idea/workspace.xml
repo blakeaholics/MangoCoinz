@@ -76,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/manbearpig/mangocoinz/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="5151" max-vertical-offset="7854">
-              <caret line="373" column="16" selection-start-line="373" selection-start-column="16" selection-end-line="374" selection-end-column="37" />
+              <caret line="367" column="16" selection-start-line="367" selection-start-column="16" selection-end-line="371" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -105,8 +105,8 @@
       <file leaf-file-name="ContactsFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/manbearpig/mangocoinz/ContactsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8279221" vertical-offset="816" max-vertical-offset="1734">
-              <caret line="104" column="37" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.52435064" vertical-offset="782" max-vertical-offset="1802">
+              <caret line="90" column="65" selection-start-line="90" selection-start-column="65" selection-end-line="90" selection-end-column="65" />
               <folding>
                 <element signature="e#2064#2583#0" expanded="true" />
                 <element signature="e#2572#2573#0" expanded="true" />
@@ -2250,15 +2250,15 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/manbearpig/mangocoinz/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5151" max-vertical-offset="7854">
-          <caret line="373" column="16" selection-start-line="373" selection-start-column="16" selection-end-line="374" selection-end-column="37" />
+          <caret line="367" column="16" selection-start-line="367" selection-start-column="16" selection-end-line="371" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/manbearpig/mangocoinz/ContactsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8279221" vertical-offset="816" max-vertical-offset="1734">
-          <caret line="104" column="37" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.52435064" vertical-offset="782" max-vertical-offset="1802">
+          <caret line="90" column="65" selection-start-line="90" selection-start-column="65" selection-end-line="90" selection-end-column="65" />
           <folding>
             <element signature="e#2064#2583#0" expanded="true" />
             <element signature="e#2572#2573#0" expanded="true" />

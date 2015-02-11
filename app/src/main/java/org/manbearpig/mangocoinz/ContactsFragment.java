@@ -101,6 +101,12 @@ public class ContactsFragment extends Fragment {
                     }
                 });
 
+                builder2.setNegativeButton("Discard", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+
                 AlertDialog contactdialog = builder2.create();
                 contactdialog.show();
                 return true;
