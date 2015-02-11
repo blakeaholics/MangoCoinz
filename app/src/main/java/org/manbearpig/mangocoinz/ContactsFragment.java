@@ -1,26 +1,20 @@
 package org.manbearpig.mangocoinz;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.Fragment;
-import android.app.ListFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.manbearpig.mangocoinz.R.layout.item_user;
 
 public class ContactsFragment extends Fragment {
 
@@ -73,8 +67,8 @@ public class ContactsFragment extends Fragment {
                 LayoutInflater inflater2 = getActivity().getLayoutInflater();
                 View contactscontent = inflater2.inflate(R.layout.dialog_contact, null);
 
-                final EditText txtName = (EditText) contactscontent.findViewById(R.id.txtAName);
-                final EditText txtUser = (EditText) contactscontent.findViewById(R.id.txtAUser);
+                final EditText txtName = (EditText) contactscontent.findViewById(R.id.txtLUser);
+                final EditText txtUser = (EditText) contactscontent.findViewById(R.id.txtLPass);
 
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
                 builder2.setView(contactscontent);
@@ -89,7 +83,7 @@ public class ContactsFragment extends Fragment {
                         ContactsFragment myFragment = (ContactsFragment)getFragmentManager().findFragmentByTag("Contacts");
                         ContactAdapter adapter = myFragment.getAdapter();
                         List<ContactItem> listContacts = myFragment.getContactsList();
-
+                        //ContactItem entry = (ContactItem) view.getTag(); - TO GET USER INFO
                         if (!txtName.getText().toString().equals("") && !txtUser.getText().toString().equals("")){
                             //listContacts.set(new ContactItem(txtName.getText().toString(), txtUser.getText().toString(), "0.00 MCZ"));
                             //adapter.notifyDataSetChanged();

@@ -9,7 +9,6 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.DialogInterface;
@@ -25,11 +24,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -50,7 +49,7 @@ public class MainActivity extends Activity {
     private ArrayList < NavDrawerItem > navDrawerItems;
     private NavDrawerListAdapter adapter;
     private int curPos = 0;
-    private int intTheme; //0 Green, 1 Orange
+    private int intTheme = 1; //0 Green, 1 Orange
     private String PREFS_NAME = "MangoCoinz_beta_prefs";
 
     @Override
@@ -60,6 +59,7 @@ public class MainActivity extends Activity {
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         intTheme = settings.getInt("intTheme", 0);
+        setTheme(getActivityTheme());
 
         setContentView(R.layout.activity_main);
 
@@ -135,15 +135,43 @@ public class MainActivity extends Activity {
             displayView(0);
         }
 
-        //loadSettings();
+        /*
+
+        Countdown timer shit.
+
+        Calendar cal = Calendar.getInstance();
+        TimeZone tz = cal.getTimeZone();
+        Log.d("Time zone","="+tz.getDisplayName());
+
+         */
+
+        loadSettings();
 
     }
 
     private void loadSettings() {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
         int theme = settings.getInt("intTheme", 0);
-        chooseTheme(theme);
-        Log.v("Settings", "Settings loaded!");
+        intTheme = theme;
+        Log.d("Settings", "Setting: intTheme = " + theme);
+        setTheme(getActivityTheme());
+
+        /*Switch swMining = new Switch(this);
+        swMining = (Switch) findViewById(R.id.swMining);
+        boolean mining = settings.getBoolean("swMining", true);
+        Log.d("Settings", "Setting: swMining = " + mining);
+        swMining.setChecked(mining);
+
+        CheckBox chkSync = new CheckBox(this);
+        chkSync = (CheckBox) findViewById(R.id.chkSync);
+        boolean sync = settings.getBoolean("chkSync", true);
+        Log.d("Settings", "Setting: chkSync = " + sync);
+        chkSync.setChecked(sync);*/
+
+
+
+        Log.d("Settings", "Settings loaded!");
     }
 
     private void loadTheme(int i) {
@@ -177,6 +205,34 @@ public class MainActivity extends Activity {
 
     public void setThemeVar(int i) {
         intTheme = i;
+    }
+
+    public int getButtonTheme()
+    {
+        int themeLayout = 0;
+        switch (intTheme) {
+            case 0:
+                themeLayout = R.drawable.btn_green;
+                break;
+            case 1:
+                themeLayout = R.drawable.btn_orange;
+                break;
+        }
+        return themeLayout;
+    }
+
+    public int getActivityTheme()
+    {
+        int themeLayout = 0;
+        switch (intTheme) {
+            case 0:
+                themeLayout = R.style.MyTheme;
+                break;
+            case 1:
+                themeLayout = R.style.MyThemeOrange;
+                break;
+        }
+        return themeLayout;
     }
 
     /**
@@ -313,14 +369,15 @@ public class MainActivity extends Activity {
 
                 final Spinner spinner = (Spinner) settingsdialog.findViewById(R.id.spn_Theme);
                 if (spinner != null) {
+                    spinner.setSelection(intTheme);
                     spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
-                        public void onItemSelected(AdapterView <? > parent, View arg1, int arg2, long arg3) {
+                        public void onItemSelected(AdapterView<?> parent, View arg1, int arg2, long arg3) {
                             intTheme = (int) arg3;
                         }
 
                         @Override
-                        public void onNothingSelected(AdapterView <? > adapterView) {
+                        public void onNothingSelected(AdapterView<?> adapterView) {
                             intTheme = Integer.getInteger(spinner.getSelectedItem().toString());
                         }
                     });
@@ -337,8 +394,8 @@ public class MainActivity extends Activity {
                 LayoutInflater inflater2 = getLayoutInflater();
                 View contactscontent = inflater2.inflate(R.layout.dialog_contact, null);
 
-                final EditText txtName = (EditText) contactscontent.findViewById(R.id.txtAName);
-                final EditText txtUser = (EditText) contactscontent.findViewById(R.id.txtAUser);
+                final EditText txtName = (EditText) contactscontent.findViewById(R.id.txtLUser);
+                final EditText txtUser = (EditText) contactscontent.findViewById(R.id.txtLPass);
 
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
                 builder2.setView(contactscontent);
@@ -400,7 +457,14 @@ public class MainActivity extends Activity {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("intTheme", intTheme);
-        Log.v("Settings", "Settings saved!");
+       // editor.putBoolean("swMining", ((Switch)(findViewById(R.id.swMining))).isChecked());
+       // editor.putBoolean("chkSync", ((CheckBox)(findViewById(R.id.chkSync))).isChecked());
+
+        editor.commit();
+        Log.d("Settings", "Setting: intTheme = " + intTheme);
+        //Log.d("Settings", "Setting: swMining = " + (((Switch)(findViewById(R.id.swMining))).isChecked()));
+        //Log.d("Settings", "Setting: chkSync = " +  (((CheckBox)(findViewById(R.id.chkSync))).isChecked()));
+        Log.d("Settings", "Settings saved!");
     }
 
     /* *

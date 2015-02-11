@@ -16,7 +16,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtAName"
+        android:id="@+id/txtLUser"
         android:hint="Recipient's username..."
         android:ems="10"
         android:layout_marginTop="48dp"
@@ -36,7 +36,7 @@
         android:hint="Enter your password..."
         android:ems="10"
         android:layout_below="@+id/space2"
-        android:layout_alignStart="@+id/txtAUser"
+        android:layout_alignStart="@+id/txtLPass"
         android:inputType="textPassword"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -60,13 +60,13 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/space"
         android:layout_alignEnd="@+id/editText1"
-        android:background="@drawable/button_custom"
+        android:background="@drawable/btn_green"
         android:textColor="#FFFFFF"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtAUser"
+        android:id="@+id/txtLPass"
         android:hint="Enter an amount..."
         android:ems="10"
         android:layout_below="@+id/space"
@@ -79,14 +79,14 @@
     <Space
         android:layout_width="20px"
         android:layout_height="20px"
-        android:layout_below="@+id/txtAName"
-        android:layout_alignStart="@+id/txtAUser"
+        android:layout_below="@+id/txtLUser"
+        android:layout_alignStart="@+id/txtLPass"
         android:id="@+id/space" />
 
     <Space
         android:layout_width="20px"
         android:layout_height="20px"
-        android:layout_below="@+id/txtAUser"
+        android:layout_below="@+id/txtLPass"
         android:layout_centerHorizontal="true"
         android:id="@+id/space2" />
 
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Before: -AMOUNT- MCZ"
-        android:id="@+id/textView"
+        android:id="@+id/txtSignUp"
         android:layout_above="@+id/btnSendCoinz"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="93dp" />
@@ -106,7 +106,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="After: -AMOUNT- MCZ"
         android:id="@+id/textView1"
-        android:layout_alignTop="@+id/textView"
+        android:layout_alignTop="@+id/txtSignUp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp" />
 

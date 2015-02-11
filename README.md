@@ -1,7 +1,22 @@
-# MangoCoinz
-Updated UI for MangoCoinz
+## MangoCoinz
+###Updated UI for MangoCoinz
 
-# Current screenshots - 05/02/2015
+#### TO-DO:
+- Finish settings
+- Improve certain UI elements on Overview
+- Rename items to current MangoCoinz naming scheme
+- Tighten up UI overall, improve for different screen sizes
+...
+- More themes
+
+
+#### Current screenshots - 10/02/2015
 ** All screenshots are working demos, not necessarily representative of the finished product **
 
-![Alt text](http://i.imgur.com/yuukcHw.png?1 "Overview") ![Alt text](http://i.imgur.com/qjSlG4k.png?2 "Slidermenu") ![Alt text](http://i.imgur.com/TNkVrYF.png?1 "Send") ![Alt text](http://i.imgur.com/39ThWjP.png?1 "Contacts")  ![Alt text](http://i.imgur.com/7IDIXYF.png?1 "Contacts")
+##### **Changing themes[/b]** 
+Only two themes as of right now, going to add dark variants
+![Alt text](http://i.imgur.com/uiTxR3M.gif?1 "Theme Selector") 
+
+##### **Improved contacts**
+Add/Remove works, need to work on editing
+![Alt text](http://i.imgur.com/TuzQJBw.gif?1 "Contacts")

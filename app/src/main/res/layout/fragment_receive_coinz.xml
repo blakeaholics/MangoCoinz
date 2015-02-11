@@ -5,7 +5,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16dp"
@@ -19,8 +19,8 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/txtAName"
-        android:layout_below="@+id/textView"
+        android:id="@+id/txtLUser"
+        android:layout_below="@+id/txtSignUp"
         android:editable="true"
         android:hint="Enter requested amount..."
         android:layout_alignParentEnd="true"
@@ -46,8 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText3"
-        android:layout_below="@+id/txtAName"
-        android:layout_alignEnd="@+id/txtAName"
+        android:layout_below="@+id/txtLUser"
+        android:layout_alignEnd="@+id/txtLUser"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"

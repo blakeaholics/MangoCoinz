@@ -8,10 +8,10 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtAName"
+        android:id="@+id/txtLUser"
         android:hint="Enter username..."
         android:ems="10"
-        android:layout_above="@+id/txtAUser"
+        android:layout_above="@+id/txtLPass"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="10dp"
@@ -19,7 +19,7 @@
         android:layout_marginTop="10dp" />
 
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnLogin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Login"
@@ -28,7 +28,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/button_custom"
+        android:background="@drawable/btn_green"
         android:textColor="#FFFFFF"
         />
 
@@ -37,14 +37,14 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/txtAUser"
+        android:id="@+id/txtLPass"
         android:hint="Enter password..."
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_margin="10dp"
-        android:layout_above="@+id/btnSave" />
+        android:layout_above="@+id/btnLogin" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -52,15 +52,15 @@
         android:layout_height="fill_parent"
         android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/textView" />
+        android:layout_above="@+id/txtSignUp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="SIGN UP"
-        android:id="@+id/textView"
-        android:layout_above="@+id/txtAName"
+        android:id="@+id/txtSignUp"
+        android:layout_above="@+id/txtLUser"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="10dp"
         android:textColor="#ff448fca" />

@@ -49,7 +49,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
             // ADD THEME SWITCH
             LayoutInflater mInflater = (LayoutInflater) activity.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
-            Log.v("NavDrawerThemeNull", String.valueOf(activity.getThemeVar()));
+            Log.d("NavDrawerThemeNull", String.valueOf(activity.getThemeVar()));
             switch (activity.getThemeVar()) {
                 case 0:
                     convertView = mInflater.inflate(R.layout.drawer_list_item, null);
@@ -60,7 +60,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
             }
         /*} else {
             LayoutInflater mInflater = (LayoutInflater) activity.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            Log.v("NavDrawerTheme", String.valueOf(activity.getThemeVar()));
+            Log.d("NavDrawerTheme", String.valueOf(activity.getThemeVar()));
             switch (activity.getThemeVar()) {
                 case 0:
                     convertView = mInflater.inflate(R.layout.drawer_list_item, parent);

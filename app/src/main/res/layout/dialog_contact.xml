@@ -11,18 +11,18 @@
         android:layout_marginRight="6dp" />
  
     <EditText
-        android:id="@+id/txtAName"
+        android:id="@+id/txtLUser"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="Enter contact name..."
         android:layout_margin="10dp" />
 		
 		<EditText
-        android:id="@+id/txtAUser"
+        android:id="@+id/txtLPass"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="Enter MCZ username..."
-            android:layout_below="@+id/txtAName"
+            android:layout_below="@+id/txtLUser"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp" />
 
