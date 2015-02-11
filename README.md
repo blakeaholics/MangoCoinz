@@ -15,8 +15,8 @@
 
 ##### **Changing themes** 
 Only two themes as of right now, going to add dark variants
-![](http://i.imgur.com/uiTxR3M.gif?1 =270x480) 
+![](http://i.imgur.com/uiTxR3M.gif?1 =180x320) 
 
 ##### **Improved contacts**
 Add/Remove works, need to work on editing
-![](http://i.imgur.com/TuzQJBw.gif?1 =270x480)
+![](http://i.imgur.com/TuzQJBw.gif?1 =180x320)
