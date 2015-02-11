@@ -5,6 +5,7 @@ import org.manbearpig.mangocoinz.model.*;
 import org.manbearpig.mangocoinz.util.ThemeUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -25,8 +26,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -253,21 +256,34 @@ public class MainActivity extends Activity {
             return true;
         }
         // Handle action bar actions click
+
+
+
         switch (item.getItemId()) {
+
+            /**
+             * SYNC
+             */
+
             case R.id.action_sync:
                 Toast.makeText(this, getString(R.string.toast_sync),
                         Toast.LENGTH_LONG).show();
 
                 return true;
+
+            /**
+             * SETTINGS
+             */
+
             case R.id.action_settings:
 
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                LayoutInflater inflater = getLayoutInflater();
-                builder.setView(inflater.inflate(R.layout.fragment_settings, null));
+                AlertDialog.Builder settingsbuilder = new AlertDialog.Builder(this);
+                LayoutInflater settingsinflater = getLayoutInflater();
+                settingsbuilder.setView(settingsinflater.inflate(R.layout.fragment_settings, null));
 
                 // Add the buttons
-                builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                settingsbuilder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User clicked OK button
                         saveSettings();
@@ -277,25 +293,25 @@ public class MainActivity extends Activity {
                 });
 
 
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                settingsbuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User cancelled the dialog
                         dialog.dismiss();
                     }
                 });
 
-                AlertDialog dialog = builder.create();
+                AlertDialog settingsdialog = settingsbuilder.create();
                 // Include dialog.xml file
                 //dialog.setContentView(R.layout.fragment_settings);
 
 
                 // Set dialog title
-                dialog.setTitle("Settings");
-                dialog.show();
+                settingsdialog.setTitle("Settings");
+                settingsdialog.show();
 
                 // Theme spinner shit
 
-                final Spinner spinner = (Spinner) dialog.findViewById(R.id.spn_Theme);
+                final Spinner spinner = (Spinner) settingsdialog.findViewById(R.id.spn_Theme);
                 if (spinner != null) {
                     spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
@@ -313,25 +329,56 @@ public class MainActivity extends Activity {
                 return true;
 
             /**
-             * Add a contact
+             * ADD CONTACT
              */
-            case R.id.action_add:
-                final Dialog dialog2 = new Dialog(this);
-                // Include dialog.xml file
-                dialog2.setContentView(R.layout.dialog_contact);
-                // Set dialog title
-                dialog2.setTitle("Add Contact");
-                dialog2.show();
 
-                Button declineButton = (Button) dialog2.findViewById(R.id.cancelButton);
-                // if decline button is clicked, close the custom dialog
-                declineButton.setOnClickListener(new View.OnClickListener() {@Override
-                                                                             public void onClick(View v) {
-                    // Close dialog
-                    dialog2.dismiss();
-                }
+            case R.id.action_add:
+
+                LayoutInflater inflater2 = getLayoutInflater();
+                View contactscontent = inflater2.inflate(R.layout.dialog_contact, null);
+
+                final EditText txtName = (EditText) contactscontent.findViewById(R.id.txtAName);
+                final EditText txtUser = (EditText) contactscontent.findViewById(R.id.txtAUser);
+
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+                builder2.setView(contactscontent);
+                builder2.setTitle("Add Contact");
+
+
+
+                // Add the buttons
+                builder2.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User clicked OK button
+                        ContactsFragment myFragment = (ContactsFragment)getFragmentManager().findFragmentByTag("Contacts");
+                        ContactAdapter adapter = myFragment.getAdapter();
+                        List<ContactItem> listContacts = myFragment.getContactsList();
+
+                        if (!txtName.getText().toString().equals("") && !txtUser.getText().toString().equals("")){
+                            listContacts.add(new ContactItem(txtName.getText().toString(), txtUser.getText().toString(), "0.00 MCZ"));
+                            adapter.notifyDataSetChanged();
+                        } else {
+                            Toast.makeText(getApplication(), "Adding contact failed...", Toast.LENGTH_LONG).show();
+                        }
+                        dialog.dismiss();
+                    }
                 });
+
+
+                builder2.setNegativeButton("Discard", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog contactdialog = builder2.create();
+                contactdialog.show();
+
                 return true;
+
+            /**
+             * QUIT
+             */
 
             case R.id.action_quit:
                 Toast.makeText(this, getString(R.string.toast_quit),
@@ -371,28 +418,35 @@ public class MainActivity extends Activity {
      * */
     private void displayView(int position) {
         // update the main content by replacing fragments
-        Fragment fragment = null;
+        Fragment fragment = null; String strFragName = "";
         switch (position) {
             case 0:
                 fragment = new OverviewFragment();
+                strFragName = "Overview";
                 break;
             case 1:
                 fragment = new SendFragment();
+                strFragName = "Send";
                 break;
             case 2:
                 fragment = new ReceiveFragment();
+                strFragName = "Receive";
                 break;
             case 3:
                 fragment = new TransactionsFragment();
+                strFragName = "Transactions";
                 break;
             case 4:
                 fragment = new ContactsFragment();
+                strFragName = "Contacts";
                 break;
             case 5:
                 fragment = new NewsFragment();
+                strFragName = "News";
                 break;
             case 6:
-                fragment = new SettingsFragment();
+                fragment = new LoginFragment();
+                strFragName = "Login";
                 break;
 
             default:
@@ -402,7 +456,7 @@ public class MainActivity extends Activity {
         if (fragment != null) {
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction()
-                    .replace(R.id.frame_container, fragment).commit();
+                    .replace(R.id.frame_container, fragment, strFragName).commit();
 
             // update selected item and title, then close the drawer
             mDrawerList.setItemChecked(position, true);

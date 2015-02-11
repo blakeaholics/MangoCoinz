@@ -2,7 +2,9 @@ package org.manbearpig.mangocoinz;
 
 import java.util.List;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +56,7 @@ public class ContactAdapter extends BaseAdapter implements OnClickListener {
         btnRemove.setFocusableInTouchMode(false);
         btnRemove.setFocusable(false);
         btnRemove.setOnClickListener(this);
+        btnRemove.setVisibility(View.GONE);
         // Set the entry, so that you can capture which item was clicked and
         // then remove it
         // As an alternative, you can use the id/position of the item to capture
@@ -68,11 +71,30 @@ public class ContactAdapter extends BaseAdapter implements OnClickListener {
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(final View view) {
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which){
+                    case DialogInterface.BUTTON_POSITIVE:
+                        ContactItem entry = (ContactItem) view.getTag();
+                        listContactItem.remove(entry);
+                        // listContactItem.remove(view.getId());
+                        notifyDataSetChanged();
+                        break;
+
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        //No button clicked
+                        break;
+                }
+            }
+        };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
         ContactItem entry = (ContactItem) view.getTag();
-        listContactItem.remove(entry);
-        // listContactItem.remove(view.getId());
-        notifyDataSetChanged();
+        builder.setMessage("Delete contact: " + entry.getName() + "?").setPositiveButton("Yes", dialogClickListener)
+                .setTitle("Are you sure?")
+                .setNegativeButton("No", dialogClickListener).show();
 
     }
 

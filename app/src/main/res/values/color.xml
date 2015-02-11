@@ -8,4 +8,5 @@
     <color name="counter_text_bg">#626262</color>
     <color name="counter_text_color">#c5c4c4</color>
     <color name="android:textColor">#fff</color>
+    <color name="text_shadow">#ff444444</color>
 </resources>

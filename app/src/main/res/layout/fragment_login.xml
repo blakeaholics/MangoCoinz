@@ -8,10 +8,10 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/txtAName"
         android:hint="Enter username..."
         android:ems="10"
-        android:layout_above="@+id/editText2"
+        android:layout_above="@+id/txtAUser"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="10dp"
@@ -29,14 +29,15 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_custom"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/txtAUser"
         android:hint="Enter password..."
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
@@ -59,7 +60,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="SIGN UP"
         android:id="@+id/textView"
-        android:layout_above="@+id/editText"
+        android:layout_above="@+id/txtAName"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="10dp"
         android:textColor="#ff448fca" />
