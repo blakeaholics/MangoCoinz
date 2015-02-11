@@ -10,13 +10,13 @@
 - More themes
 
 
-#### Current screenshots - 10/02/2015
+#### SCREENSHOTS: 10/02/2015
 **All screenshots are working demos, not necessarily representative of the finished product**
 
 ##### **Changing themes** 
 Only two themes as of right now, going to add dark variants
-![](http://i.imgur.com/uiTxR3M.gif?1 =180x320) 
+<img src="http://i.imgur.com/uiTxR3M.gif?1 style="width: 135px; height: 240px;"/> 
 
 ##### **Improved contacts**
 Add/Remove works, need to work on editing
-![](http://i.imgur.com/TuzQJBw.gif?1 =180x320)
+<img src="http://i.imgur.com/TuzQJBw.gif?1" style="width: 135px; height: 240px;"/>
