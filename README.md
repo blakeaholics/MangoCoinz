@@ -14,9 +14,9 @@
 **All screenshots are working demos, not necessarily representative of the finished product**
 
 ##### **Changing themes** 
-Only two themes as of right now, going to add dark variants
-<img src="http://i.imgur.com/uiTxR3M.gif?1 width="135px" height="240px"/> 
+Only two themes as of right now, going to add dark variants</br>
+<img src="http://i.imgur.com/uiTxR3M.gif?1 width="270px" height="360px"/> 
 
 ##### **Improved contacts**
-Add/Remove works, need to work on editing
-<img src="http://i.imgur.com/TuzQJBw.gif?1" width="135px" height="240px"/>
+Add/Remove works, need to work on editing</br>
+<img src="http://i.imgur.com/TuzQJBw.gif?1" width="270px" height="360px"/>
