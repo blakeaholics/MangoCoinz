@@ -11,9 +11,9 @@
 
 
 #### Current screenshots - 10/02/2015
-** All screenshots are working demos, not necessarily representative of the finished product **
+**All screenshots are working demos, not necessarily representative of the finished product**
 
-##### **Changing themes[/b]** 
+##### **Changing themes** 
 Only two themes as of right now, going to add dark variants
 ![Alt text](http://i.imgur.com/uiTxR3M.gif?1 "Theme Selector") 
 
